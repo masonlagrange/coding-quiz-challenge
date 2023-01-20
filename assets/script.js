@@ -157,17 +157,22 @@ function gameOver () {
 
         if(localStorage.getItem('HighScore') === null) {
             var highscore = {
-            hscore: score,
-            initial: initials.value.trim()
-            localStorage.setItem('HighScore', JSON.stringify(highscore));
-            highScorePage();
+                hscore: score,
+                initial: initials.value.trim()
+            }
+                localStorage.setItem('HighScore', JSON.stringify(highscore));
+                highScorePage();
+            
         } else if (score > JSON.parse(localStorage.getItem('HighScore')).hscore){
             var highscore = {
             hscore: score,
             initial: initials.value.trim()
-            localStorage.setItem('HighScore', JSON.stringify(highscore));
+        }
+        localStorage.setItem('HighScore', JSON.stringify(highscore));
+        highScorePage();
+        } else {
             highScorePage();
-        }       
+        }      
     });
 }
 
