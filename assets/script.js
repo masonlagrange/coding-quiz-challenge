@@ -159,7 +159,6 @@ function gameOver () {
             var highscore = {
             hscore: score,
             initial: initials.value.trim()
-            highScorePage();
         } else if (score > JSON.parse(localStorage.getItem('HighScore')).hscore){
             var highscore = {
             hscore: score,
