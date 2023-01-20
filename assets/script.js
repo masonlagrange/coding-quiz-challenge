@@ -156,6 +156,9 @@ function gameOver () {
     button2.addEventListener('click', function() {
 
         if(localStorage.getItem('HighScore') === null) {
+            var highscore = {
+            hscore: score,
+            initial: initials.value.trim()
             highScorePage();
         } else if (score > JSON.parse(localStorage.getItem('HighScore')).hscore){
             var highscore = {
