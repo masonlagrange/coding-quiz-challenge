@@ -19,5 +19,41 @@ body {
 
 #titleAndQuestion {
     font-size: 32px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+#desc {
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.buttons {
+    margin: auto 45%;
+}
+
+.timer {
+    justify-content: right;
+}
+
+.input {
     margin: auto;
+    text-align: center;
+}
+
+.list li {
+    list-style-type: none;
+    margin: 10px auto;
+    padding: 10px 10px 10px 25px;
+    border-radius: 30px;
+    background-color: purple;
+    color: aliceblue;
+    max-width: 35%;
+}
+
+#rightOrWrong {
+    margin-top: 30px;
+    color: #b0b0b0;
+    border-style: solid hidden hidden hidden;
+    border-width: 5px;
 }
