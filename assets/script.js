@@ -159,16 +159,15 @@ function gameOver () {
             var highscore = {
             hscore: score,
             initial: initials.value.trim()
+            localStorage.setItem('HighScore', JSON.stringify(highscore));
+            highScorePage();
         } else if (score > JSON.parse(localStorage.getItem('HighScore')).hscore){
             var highscore = {
             hscore: score,
             initial: initials.value.trim()
-        }
-        localStorage.setItem('HighScore', JSON.stringify(highscore));
-        highScorePage();
-        } else {
+            localStorage.setItem('HighScore', JSON.stringify(highscore));
             highScorePage();
-        }      
+        }       
     });
 }
 
