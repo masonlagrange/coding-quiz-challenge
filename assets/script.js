@@ -154,7 +154,10 @@ function gameOver () {
     button2.style.display = 'block';
     button2.textContent = 'Submit';
     button2.addEventListener('click', function() {
-        if(score > JSON.parse(localStorage.getItem('HighScore')).hscore){
+
+        if(localStorage.getItem('HighScore') === null) {
+            highScorePage();
+        } else if (score > JSON.parse(localStorage.getItem('HighScore')).hscore){
             var highscore = {
             hscore: score,
             initial: initials.value.trim()
@@ -174,7 +177,9 @@ highScoreLink.addEventListener('click', function() {
 function highScorePage() {
     titleAndQuestion.textContent = 'High Score';
     var highscoreRender = JSON.parse(localStorage.getItem('HighScore'));
-    desc.textContent = highscoreRender.initial + ": " + highscoreRender.hscore;
+    if(highscoreRender !== null) {
+        desc.textContent = highscoreRender.initial + ": " + highscoreRender.hscore;
+    }
     input.style.display = 'none';
     rightOrWrong.style.display = 'none';
     button2.style.display = 'none';
